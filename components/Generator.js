@@ -3,6 +3,7 @@
 import axios from 'axios';
 import { ArrowUp, Copy, CheckCircle } from 'lucide-react';
 import React, { useRef, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const BACKEND_URI = process.env.NEXT_PUBLIC_BACKEND_URI;
 
@@ -53,6 +54,7 @@ const Generator = () => {
     console.log('Response', response.data.proposal)
 
   } catch (error) {
+    toast.error("Some Error Occured.")
     console.error("Error generating proposal:", error);
   } finally {
       setLoading(false);
