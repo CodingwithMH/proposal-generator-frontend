@@ -20,7 +20,35 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.scroll-hidden {
+  scrollbar-width: none;
+}
+
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #16a34a #dcfce7;
+  scroll-behavior: smooth;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #dcfce7;
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22c55e, #15803d);
+  border-radius: 10px;
+  border: 2px solid #dcfce7;
+  transition: all 0.3s ease;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #16a34a, #166534);
 }
