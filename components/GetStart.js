@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const GetStart = ({ setPage }) => {
+const GetStart = () => {
   return (
     <>
       <div className="w-full h-full flex justify-center items-center relative z-2">
@@ -15,7 +15,6 @@ const GetStart = ({ setPage }) => {
           <Link
           data-aos="fade-up"
           href={"/generate"}
-            onClick={() => setPage("generator")}
             className="w-fit px-6 py-2 bg-white rounded-full shadow-lg text-lg cursor-pointer hover:bg-emerald-500 hover:text-white transition-all duration-150"
           >
             Get Started
