@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ToastProvider = () => {
   return (
+    <>
     <ToastContainer
       position="top-center"
       autoClose={5000}
@@ -16,7 +17,8 @@ const ToastProvider = () => {
       pauseOnHover
       theme="dark"
       transition={Bounce}
-    />
+      />
+      </>
   );
 };
 

@@ -50,13 +50,12 @@ const Generator = () => {
     try {
       if (!prompt) return;
 
-      const response = await axios.post(
+      const res = await axios.post(
         `${BACKEND_URI}/generate-proposal`,
         prompt,
       );
-      const obj = JSON.parse(response.data);
+      const obj = JSON.parse(res.data);
       setResponse(obj.proposal);
-      console.log("Response", response.data.proposal);
     } catch (error) {
       toast.error("Some Error Occured.");
       console.error("Error generating proposal:", error);
@@ -179,15 +178,14 @@ const Generator = () => {
                 {/* <pre className="text-sm text-slate-200 font-mono overflow-y-auto max-h-64 wrap-break-word leading-relaxed whitespace-pre-line">
                   {response}
                 </pre> */}
-                {response && !loading && (
                   <TypeAnimation
-                  key={response}
+                    key={response}
                     sequence={[response]}
                     wrapper="pre"
                     speed={90}
                     className="text-sm text-slate-200 font-mono overflow-y-auto max-h-64 leading-relaxed whitespace-pre-line"
                   />
-                )}
+                
               </div>
             </div>
           </div>
