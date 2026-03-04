@@ -3,7 +3,7 @@ import axios from "axios";
 import { ArrowUp, Copy, CheckCircle } from "lucide-react";
 import React, { useRef, useState } from "react";
 import { toast } from "react-toastify";
-
+import { TypeAnimation } from "react-type-animation";
 const BACKEND_URI = process.env.NEXT_PUBLIC_BACKEND_URI;
 
 const Generator = () => {
@@ -98,27 +98,33 @@ const Generator = () => {
                 disabled={loading}
               ></textarea>
               <div className="flex flex-wrap gap-2">
-                <input
-                  name="link"
-                  className="w-full bg-slate-950 text-slate-50 placeholder-slate-400 outline-none rounded-lg p-4 pr-16 resize-none scroll-smooth border-0 focus:ring-0 text-base leading-6 focus:bg-slate-900 transition flex-1"
-                  type="link"
-                  value={prompt.link}
-                  rows={1}
-                  onChange={handleInput}
-                  placeholder="Your Portfolio Link..."
-                  disabled={loading}
-                  required
-                />
-                <input
-                  name="client_name"
-                  className="w-full bg-slate-950 text-slate-50 placeholder-slate-400 outline-none rounded-lg p-4 pr-16 resize-none scroll-smooth border-0 focus:ring-0 text-base leading-6 focus:bg-slate-900 transition flex-1"
-                  type="text"
-                  value={prompt.client_name}
-                  rows={1}
-                  onChange={handleInput}
-                  placeholder="Client Name Here...(Optional)"
-                  disabled={loading}
-                />
+                <div className="relative">
+                  <input
+                    name="link"
+                    value={prompt.link}
+                    onChange={handleInput}
+                    required
+                    className="peer w-full bg-slate-950 text-white rounded-lg p-4 pt-6 outline-none focus:bg-slate-900"
+                    placeholder="Portfolio Link"
+                  />
+                  <label className="absolute left-4 top-2 text-xs text-emerald-400 opacity-0 peer-focus:opacity-100 transition">
+                    Portfolio Link
+                  </label>
+                </div>
+                <div className="relative">
+                  <input
+                    name="client_name"
+                    value={prompt.client_name}
+                    onChange={handleInput}
+                    required
+                    className="peer w-full bg-slate-950 text-white rounded-lg p-4 pt-6 outline-none focus:bg-slate-900"
+                    placeholder="Client Name"
+                    disabled={loading}
+                  />
+                  <label className="absolute left-4 top-2 text-xs text-emerald-400 opacity-0 peer-focus:opacity-100 transition">
+                    Client Name (Optional)
+                  </label>
+                </div>
                 <button
                   type="submit"
                   disabled={
@@ -171,6 +177,9 @@ const Generator = () => {
               </div>
 
               <div className="p-4">
+                {/* <pre className="text-sm text-slate-200 font-mono overflow-y-auto max-h-64 wrap-break-word leading-relaxed whitespace-pre-line">
+                  {response}
+                </pre> */}
                 {response && !loading && (
                   <TypeAnimation
                     sequence={[response]}
