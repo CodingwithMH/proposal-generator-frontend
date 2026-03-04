@@ -116,7 +116,6 @@ const Generator = () => {
                     name="client_name"
                     value={prompt.client_name}
                     onChange={handleInput}
-                    required
                     className="peer w-full bg-slate-950 text-white rounded-lg p-4 pt-6 outline-none focus:bg-slate-900"
                     placeholder="Client Name"
                     disabled={loading}
@@ -182,6 +181,7 @@ const Generator = () => {
                 </pre> */}
                 {response && !loading && (
                   <TypeAnimation
+                  key={response}
                     sequence={[response]}
                     wrapper="pre"
                     speed={90}
