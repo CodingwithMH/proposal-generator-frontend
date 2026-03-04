@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { TypeAnimation } from 'react-type-animation';
 
 const GetStart = () => {
   return (
