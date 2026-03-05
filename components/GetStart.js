@@ -1,25 +1,32 @@
 import Link from "next/link";
 import React from "react";
+import Pricing from "./Pricing";
+import Working from "./Working";
+import Features from "./Features";
+import Trust from "./Trust";
+import Hero from "./Hero";
+import FinalSection from "./FinalSection";
 
 const GetStart = () => {
   return (
     <>
-      <div className="w-full h-full flex justify-center items-center relative z-2">
-        <div className="flex flex-col items-center gap-10">
-          <h1 data-aos="fade-down" className="text-5xl font-bold bg-linear-to-r from-emerald-300 via-green-300 to-teal-300 bg-clip-text text-transparent">
-            Proposal Generator
-          </h1>
-          <p data-aos="fade-down" className="text-slate-300 text-lg">
-            Transform job descriptions into winning proposals instantly
-          </p>
-          <Link
-          data-aos="fade-up"
-          href={"/generate"}
-            className="w-fit px-6 py-2 bg-white rounded-full shadow-lg text-lg cursor-pointer hover:bg-emerald-500 hover:text-white transition-all duration-150"
-          >
-            Get Started
-          </Link>
-        </div>
+      <div className="text-white">
+        <Hero />
+
+        <Trust />
+
+        <Features />
+
+        <Working />
+
+        <Pricing />
+
+        <FinalSection />
+
+        <footer className="px-6 py-10 text-center border-t border-white/5 text-slate-500 text-sm">
+          © {new Date().getFullYear()} AI Proposal Generator. All rights
+          reserved.
+        </footer>
       </div>
     </>
   );

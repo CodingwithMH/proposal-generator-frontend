@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 export default function AOSProvider({ children }) {
   useEffect(() => {
     Aos.init({
-      duration: 300,
+      duration: 400,
       once: true,
     });
   }, []);

@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AOSProvider from "@/providers/AOSProvider";
 import ToastProvider from "@/providers/ToastProvider";
+import Header from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +25,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
         <AOSProvider>
-
-        <main className="w-screen h-screen bg-linear-to-br from-slate-950 via-emerald-900 to-slate-950 overflow-hidden relative">
-
-        {children}
-        </main>
+          <Header />
+          <main className="relative box-border min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+            <div className="absolute inset-0 z-0 h-screen w-screen">
+              <div className="absolute -top-50 -left-50 w-125 h-125 bg-teal-500/30 rounded-full blur-3xl bottomgradient"></div>
+              <div className="absolute -bottom-50 -right-50 w-125 h-125 bg-indigo-500/30 rounded-full blur-3xl topgradient"></div>
+            </div>
+            {children}
+          </main>
         </AOSProvider>
         <ToastProvider />
       </body>
