@@ -58,7 +58,13 @@ const Generator = () => {
 
       setResponse(obj.proposal);
     } catch (err) {
-      toast.error("Error generating proposal");
+      if (err.response?.status === 429) {
+    toast.error("Too many requests. Please wait before trying again.");
+  } else if (err.response?.data?.error) {
+    toast.error(err.response.data.error);
+  } else {
+    toast.error("Error generating proposal");
+  }
     } finally {
       setLoading(false);
     }
