@@ -94,6 +94,7 @@ const Generator = () => {
               onChange={handleInput}
               placeholder="Paste job description..."
               className="w-full bg-slate-50 border border-slate-300 rounded-lg p-4 text-slate-700 outline-none focus:ring-2 focus:ring-green-400 resize-none"
+              required
             />
 
             <input
