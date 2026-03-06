@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       >
         <AOSProvider>
           <Header />
-          <main className="relative box-border min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+          <main className="relative box-border min-h-screen overflow-hidden">
             <div className="absolute inset-0 z-0 h-screen w-screen">
               <div className="absolute -top-50 -left-50 w-125 h-125 bg-teal-500/30 rounded-full blur-3xl bottomgradient"></div>
               <div className="absolute -bottom-50 -right-50 w-125 h-125 bg-indigo-500/30 rounded-full blur-3xl topgradient"></div>
